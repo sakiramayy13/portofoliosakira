@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakira Humaira Putri Dermadi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --ungu-tua: #8607a5;
+            --ungu: #810aa1;
+            --ungu-lembut: #6b7280;
+            --ungu-sangat-lembut: #f3e8ff;
+            --latar: #f2d4f0;
+            --putih: #ffffff;
+            --teks-tua: #312e3f;
+            --teks-lembut: #6b7280;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--latar);
+            color: var(--teks-tua);
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .wadah {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #000000;
+        }
+        .menu a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: var(--teks-tua);
+            font-weight: 500;
+            padding: 8px 20px;
+            border: 2px solid var(--ungu);
+            border-radius: 10px;
+            transition: 0.3s ease;
+            background: transparent;
+        }
+        .menu a:hover {
+            color: var(--ungu);
+            border-color: var(--ungu);
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        /* BERANDA — LANDSCAPE di komputer */
+        .beranda {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 75vh;
+            padding: 20px 0 60px;
+            gap: 50px;
+        }
+        .beranda-kiri {
+            flex: 1;
+        }
+        .beranda-kanan {
+            flex-shrink: 0;
+        }
+        .foto-profil {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--ungu);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+        }
+        .salam {
+            font-size: 22px;
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 52px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+        h1 span {
+            color: var(--ungu);
+        }
+        .sub {
+            font-size: 24px;
+            color: var(--ungu-lembut);
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+        .deskripsi {
+            color: var(--teks-lembut);
+            font-size: 18px;
+            max-width: 580px;
+            margin-bottom: 40px;
+        }
+        .tombol-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .tombol {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+        .tombol-ungu {
+            background: var(--ungu);
+            color: white;
+            box-shadow: 0 6px 15px rgba(124, 58, 237, 0.2);
+        }
+        .tombol-ungu:hover {
+            transform: translateY(-2px);
+        }
+        .tombol-putih {
+            background: var(--putih);
+            color: var(--ungu);
+            border: 2px solid var(--ungu);
+        }
+        .tombol-putih:hover {
+            background: var(--ungu-sangat-lembut);
+        }
+
+        /* BAGIAN UMUM */
+        .bagian {
+            padding: 60px 0;
+        }
+        .judul {
+            font-size: 40px;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--ungu-sangat-lembut);
+            display: inline-block;
+        }
+        .judul span {
+            color: var(--ungu);
+        }
+        .kartu {
+            background: var(--putih);
+            padding: 36px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.06);
+            border-left: 5px solid var(--ungu);
+        }
+        .kartu h3 {
+            font-size: 26px;
+            color: var(--ungu);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .label {
+            display: inline-block;
+            background: var(--ungu-sangat-lembut);
+            color: var(--ungu);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 6px 8px 6px 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* KONTAK */
+        .kontak-kotak {
+            background: var(--putih);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.06);
+        }
+        .kontak-kotak p {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #8607a5;
+            color: var(--putih);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* HP — foto di bawah, tetap rapi */
+        @media (max-width: 768px) {
+            .beranda {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu { display: none; }
+            h1 { font-size: 36px; }
+            .tombol-group { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wadah">
+        <nav>
+            <div class="logo">Sakira.</div>
+            <div class="menu">
+                <a href="#beranda">Home</a>
+                <a href="#tentang">About Me</a>
+                <a href="#karya">Projects</a>
+                <a href="#kemampuan">Skills</a>
+                <a href="#kontak">Contact</a>
+            </div>
+        </nav>
+
+        <!-- BERANDA — LANDSCAPE di komputer -->
+        <section class="beranda" id="beranda">
+            <div class="beranda-kiri">
+                <p class="salam">👋 Halo, Saya</p>
+                <h1><span>Sakira Humaira Putri Dermadi</span></h1>
+                <p class="sub">Siswa & Calon Pengembang Web</p>
+                <p class="deskripsi">Saya siswi SMK Swasta Mandiri jurusan RPL. Saya belajar membuat halaman web yang cantik, rapi, dan bermanfaat. Selalu ingin belajar hal baru dan tidak mudah menyerah 💜</p>
+                <div class="tombol-group">
+                    <a href="cv.jpeg" class="tombol tombol-ungu" >Lihat CV</a>
+                    <a href="#karya" class="tombol tombol-putih">Projects</a>
+                </div>
+            </div>
+            <div class="beranda-kanan">
+                <img src="Foto.jpeg" class="foto-profil" alt="Foto Sakira">
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section class="bagian" id="tentang">
+            <h2 class="judul">About <span>Me</span></h2>
+            <div class="kartu">
+                <h3>💜 Who I Am</h3>
+                <p>Saya Sakira Humaira Putri Dermadi, siswi SMK Swasta Mandiri jurusan Rekayasa Perangkat Lunak (RPL). Saya tertarik mempelajari cara membuat tampilan web yang indah dan mudah digunakan. Saya senang belajar hal baru, rajin, teliti, dan selalu berusaha memberikan hasil terbaik.</p>
+                <div style="margin-top: 24px;">
+                    <span class="label">Siswa RPL</span>
+                    <span class="label">Pecinta Warna Ungu</span>
+                    <span class="label">Siap Berkarya</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- KARYA -->
+        <section class="bagian" id="karya">
+            <h2 class="judul">Projects & <span>Learning Journey</span></h2>
+            <div class="grid">
+                <div class="kartu">
+                    <h3>✨ Hasil Belajar</h3>
+                    <p>Melalui proses belajar, saya menyusun halaman web ini menggunakan HTML dan CSS. Saya ikut menentukan tata letak, memilih warna, dan menyusun isinya sebaik mungkin — sebagai langkah awal saya dalam dunia pemrograman.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="label">HTML5</span>
+                        <span class="label">CSS</span>
+                        <span class="label">VS Code</span>
+                    </div>
+                </div>
+                <div class="kartu">
+                    <h3>📂 Pengalaman PKL</h3>
+                    <p>Melaksanakan Praktik Kerja Lapangan yang melatih kedisiplinan, tanggung jawab, dan kemampuan bekerja sama dengan orang lain.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="label">Kerja Sama</span>
+                        <span class="label">Disiplin</span>
+                        <span class="label">Tepat Waktu</span>
+                    </div>
+                </div>
+                <div class="kartu">
+                    <h3>🏫 Kegiatan Sekolah</h3>
+                    <p>Aktif mengikuti kegiatan sekolah dan organisasi yang melatih kepercayaan diri, kepemimpinan, serta kebersamaan dengan teman-teman.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="label">Pramuka</span>
+                        <span class="label">Kekompakan</span>
+                        <span class="label">Belajar & Berkarya</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEMAMPUAN -->
+        <section class="bagian" id="kemampuan">
+            <h2 class="judul">Skills</h2>
+            <div class="grid">
+                <div class="kartu">
+                    <h3>💻 Pengembangan Web</h3>
+                    <p>• HTML — menyusun kerangka halaman</p>
+                    <p>• CSS — mengatur warna, huruf & tata letak</p>
+                    <p>• Membuat tampilan rapi di HP & komputer</p>
+                    <div style="margin-top: 16px;">
+                        <span class="label">Pemula → Berkembang</span>
+                    </div>
+                </div>
+                <div class="kartu">
+                    <h3>🖥️ Kemampuan Komputer</h3>
+                    <p>• Microsoft Word — menyusun dokumen</p>
+                    <p>• Microsoft Excel — mengolah data</p>
+                    <p>• Microsoft PowerPoint — membuat presentasi</p>
+                </div>
+                <div class="kartu">
+                    <h3>💪 Sifat & Sikap</h3>
+                    <p>✅ Teliti dan rajin</p>
+                    <p>✅ Mudah diajarkan</p>
+                    <p>✅ Tidak mudah menyerah</p>
+                    <p>✅ Senang bekerja sama dalam tim</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTAK -->
+        <section class="bagian" id="kontak">
+            <h2 class="judul">Contact <span>Me</span></h2>
+            <div class="kontak-kotak">
+                <p>📧 sakirahumaira3@gmail.com</p>
+                <p>📱 0831-8293-2185</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sakira Humaira Putri Dermadi 💜 Terima Kasih Sudah Berkunjung ✨</p>
+    </footer>
+</body>
+</html>
